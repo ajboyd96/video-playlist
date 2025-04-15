@@ -1,36 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Video Playlist</title>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #111; color: #fff; }
-        h1 { margin-bottom: 10px; }
-        .video-title { margin: 10px 0; }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Video Playlist</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .video-title {
+      margin: 10px 0;
+    }
+    a {
+      color: #1E90FF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #playlist {
+      margin-top: 20px;
+    }
+    video {
+      width: 100%;
+      max-width: 960px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Video Playlist</h1>
-    <video id="player" playsinline controls>
-        <source src="https://drive.google.com/uc?export=download&id=VIDEO_ID_1" type="video/mp4" />
-    </video>
-    <div id="playlist">
-        <p class="video-title"><a href="#" onclick="loadVideo('https://drive.google.com/uc?export=download&id=VIDEO_ID_1')">Introduction to Python</a></p>
-<p class="video-title"><a href="#" onclick="loadVideo('https://drive.google.com/uc?export=download&id=VIDEO_ID_2')">Loops and Logic</a></p>
-<p class="video-title"><a href="#" onclick="loadVideo('https://drive.google.com/uc?export=download&id=VIDEO_ID_3')">Functions and Modules</a></p>
+  <h1>Video Playlist</h1>
 
+  
+    <!-- Load the first video by default -->
+    <video id="player" playsinline controls>
+      <source src="https://drive.google.com/uc?export=view&id=1J6vjNEZ-em3DZMhQNEoIJxMIGeHeRYT4" type="video/mp4" />
+    </video>
+
+    <div id="playlist">
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1J6vjNEZ-em3DZMhQNEoIJxMIGeHeRYT4'); return false;">1.03 The Tools.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1yjkSG7iVuKRFoUQU63GURreBxHSSGbCl'); return false;">1.02 The Setup And Checklist.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1onjBJHKXtXeZWA6Pq1RJUBJgkGDmbWpy'); return false;">1.01 The Strategy.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=155mVTz0ifOy3fKSH4ufsRkr5eGdXJO07'); return false;">2.03 When To Switch Offers.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1VR1Q3ukFVnGCiU593ApLxjB4Vsi1da2V'); return false;">2.02 Deciding What Offer To Promote.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1eYiNXwkBgMWqX2lPj6ZISrBBKqlSNr9T'); return false;">2.01 Market Place Overview.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1Qyvab3XboaH_dLh5Q7dytPKdBMr69kwN'); return false;">3.02 Facebook Ads Overview And Campaign Setup.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1EGQbLzOLHs3y7SZJecMzddU3LThIRNWL'); return false;">3.01 Setting Up Your Facebook Ad Account.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1mP6U8y7H8nqpCPEOy42gRZcKhHb1C9jc'); return false;">4.03 Testing Your Ad Copy.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1Ktl1cU5-3mrGgJjKH4L1x2LmjSzFkd0q'); return false;">4.02 Understanding Your Avatar.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1IxA1a7NJsxi3y9lP2NlQwDUs-H1NIFFO'); return false;">4.01 Learning How To Write Ad Copy.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1UWSnCwVJqdYyHBal5Ob77CTqe9McBZcQ'); return false;">5.03 Understanding Your Landing Page Metrics.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=11DHTJckKq86HlDDeX1_T6imrPDlf-qG7'); return false;">5.02 Setting Up Your Landing Page For Success.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1VNlOs0oUFRIjBlii4e0PB0fD3ZGriUC5'); return false;">5.01 Choosing The Type Of Landing Page To Use.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1mW3Re22Myo23vqsIfavKGV-mzTFrFFYW'); return false;">6.04 Commission Hero $1000 Per Day.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1hVeymsZvqeheNFfUR7g_gG2OwKLLhS_O'); return false;">6.03 Keeping Your Campaign Successful.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1BNRLJPbwklcUzFHycYEUzkpJGvmPNMKc'); return false;">6.02 To Scale Or Not To Scale.mp4</a>
+        </p>
+      
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('https://drive.google.com/uc?export=view&id=1J8HD2XKKJ_n35bawzWOxcyR9eltJr6cO'); return false;">6.01 Understanding Your Metrics.mp4</a>
+        </p>
+      
     </div>
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script>
-        const player = new Plyr('#player');
-        function loadVideo(url) {
-            player.source = {
-                type: 'video',
-                sources: [{ src: url, type: 'video/mp4' }],
-            };
-            player.play();
-        }
-    </script>
+  
+
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const player = new Plyr('#player');
+      window.loadVideo = function(url) {
+        player.source = {
+          type: 'video',
+          sources: [{ src: url, type: 'video/mp4' }]
+        };
+        player.play();
+      };
+    });
+  </script>
 </body>
 </html>
