@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Video Playlist</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #111; color: #fff; }
+        h1 { margin-bottom: 10px; }
+        .video-title { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Video Playlist</h1>
+    <video id="player" playsinline controls>
+        <source src="https://drive.google.com/uc?export=download&id=VIDEO_ID_1" type="video/mp4" />
+    </video>
+    <div id="playlist">
+        <p class="video-title"><a href="#" onclick="loadVideo('https://drive.google.com/uc?export=download&id=VIDEO_ID_1')">Introduction to Python</a></p>
+<p class="video-title"><a href="#" onclick="loadVideo('https://drive.google.com/uc?export=download&id=VIDEO_ID_2')">Loops and Logic</a></p>
+<p class="video-title"><a href="#" onclick="loadVideo('https://drive.google.com/uc?export=download&id=VIDEO_ID_3')">Functions and Modules</a></p>
+
+    </div>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player');
+        function loadVideo(url) {
+            player.source = {
+                type: 'video',
+                sources: [{ src: url, type: 'video/mp4' }],
+            };
+            player.play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Playlist</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .video-title {
+      margin: 10px 0;
+    }
+    a {
+      color: #1E90FF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #playlist {
+      margin-top: 20px;
+    }
+    video {
+      width: 100%;
+      max-width: 960px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Video Playlist</h1>
+
+  {% if video_entries %}
+    <!-- Load the first video by default -->
+    <video id="player" playsinline controls>
+      <source src="{{ video_entries[0].url }}" type="video/mp4" />
+    </video>
+
+    <div id="playlist">
+      {% for video in video_entries %}
+        <p class="video-title">
+          <a href="#" onclick="loadVideo('{{ video.url }}'); return false;">{{ video.title }}</a>
+        </p>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No videos found.</p>
+  {% endif %}
+
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const player = new Plyr('#player');
+      window.loadVideo = function(url) {
+        player.source = {
+          type: 'video',
+          sources: [{ src: url, type: 'video/mp4' }]
+        };
+        player.play();
+      };
+    });
+  </script>
+</body>
+</html>
+
